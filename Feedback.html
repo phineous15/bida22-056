@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Welcome to Warner Bros.</title>
+</head>
+<body>
+  <!-- Side Navbar -->
+  <nav class="side-navbar">
+    <ul>
+      <li><a href="Movies.html">Movies</a></li>
+      <li><a href="TVShows.html">TV Shows</a></li>
+      <li><a href="Games&Apps.html">Games & Apps</a></li>
+      <li><a href="Collections.html">Collections</a></li>
+      <li><a href="Feedback.html">Feedback</a></li>
+    </ul>
+    <div class="logo"><a href="index.html">
+      <img src="Warner_Bros_logo.svg.png" alt="Warner Bros. Logo"></a>
+    </div>
+  </nav>
+
+
+
+<h2>Feedback Form</h2>
+<form id="feedback-form" action="send-feedback.php" method="POST">
+  <label for="achieved-goals">Did you achieve your goals?</label>
+  <select name="achieved-goals" required>
+    <option value="yes">Yes</option>
+    <option value="partially">Partially</option>
+    <option value="no">No</option>
+  </select>
+
+  <label for="goal-reason">What was the reason for your goals?</label>
+  <select name="goal-reason" required>
+    <option value="movie-check">Movie Check</option>
+    <option value="where-to-watch">Where to Watch</option>
+    <option value="movie-release">Movie Release</option>
+  </select>
+
+  <label for="not-achieved-reason">What was the reason you could not achieve your goals?</label>
+  <select name="not-achieved-reason" required>
+    <option value="form-does-not-work">Form does not work</option>
+    <option value="website-navigation-is-bad">Website navigation is bad</option>
+  </select>
+
+  <label for="suggestions">Suggestions</label>
+  <textarea name="suggestions" placeholder="Enter your suggestions here"></textarea>
+
+  <input type="submit" value="Submit">
+</form>
+
+<div id="thank-you-message" class="thank-you" style="display: none;">
+  <p>Thank you for your feedback!</p>
+  <p>You will be redirected to the homepage shortly.</p>
+</div>
+
+<script>
+  document.getElementById("feedback-form").addEventListener("submit", function(event) {
+    event.preventDefault();
+    // Perform form submission and send email code here
+
+    // Show the thank you message
+    document.getElementById("feedback-form").style.display = "none";
+    document.getElementById("thank-you-message").style.display = "block";
+
+    // Redirect to homepage after 5 seconds
+    setTimeout(function() {
+      window.location.href = "index.html";
+    }, 5000);
+  });
+</script>
+
+</body>
+
+<br><br><br><br><br><br><br><br>
+
+<footer>
+    <ul class="footer-links">
+      <li><a href="">Terms of use</a></li>
+      <li><a href=""></a>Privacy Policy</li>
+      <li><a href="">ContactUs</a></li>
+    </ul>
+  </footer>
+  </html>
